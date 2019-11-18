@@ -1,21 +1,27 @@
-const ReadlineSync=require('readline-sync');
-let Min= Number.MIN_SAFE_INTEGER;
-let Max= Number.MAX_SAFE_INTEGER;
+const ReadlineSync = require('readline-sync');
 let Pi = ReadlineSync.question('\nPositive integer: ');
+let Min = 1;
+let Max = Number.MAX_SAFE_INTEGER;
+let Odd = ("");
+let Integer = 0
 
-function getStringFromUserAndThenReverseIt()
-{
-	var Pi_r = prompt("Enter the string which you want to reverse: ");
-	var s = new Array();
-	var count = 0;
-	var reverseCount = e.length-1;
-	while(count<e.length && reverseCount>=0)
-	{
-		s.push(e[reverseCount]);
-		document.write(s[count]);
-		reverseCount--;
-		count++;
-	}
+do {
+ Pi = ReadlineSync.question('Positive integer: ');
+} while (Pi < Min);
+var Reverse_number = 0;
+var Num_value = Pi;
+while (Num_value != 0) {
+ Reverse_number = parseInt(Reverse_number * 10);
+ Reverse_number = parseInt(Reverse_number + (Num_value % 10));
+ Num_value = parseInt(Num_value / 10);
 }
-getStringFromUserAndThenReverseIt();
- 
+do {
+ Integer = Pi % 10;
+ Odd = Odd + Integer + ", ";
+ Pi = Pi - Integer
+ Pi = Pi / 10;
+
+} while (Pi > 10);
+
+Odd = Odd + Pi + (".");
+console.log('\n' + Odd);
