@@ -1,38 +1,11 @@
-const ReadlineSync = require('readline-sync');
-const Max= 24;
-const Min= 1;
-let Height=ReadlineSync.question('\nHeight: ');
-while (Height>24||Height<1) {
-  Height=ReadlineSync.question('Height: ');
+const readlineSync = require('readline-sync');
+const MAX= 24;
+const MIN= 1;
+let height=readlineSync.question('\nHeight: ');
+while (height>24||height<1) {
+  height=readlineSync.question('Height: ');
 }
-for(var Tags = 0; Tags < 7; Tags++) {
-  console.log(Tags+="#")
-      for(var Spaces=0; Spaces<7; Spaces++){
-        console.log(Spaces+=" ")
-        for(var Lines=0; Lines<7; Lines++){
-          console.log(Lines+="\n")
-        }
-      }
-}
+for (var count = 2; count < 9; count++) {
 
-/*if (Height==1){
-  console.log('      ##');
+    console.log(new Array(count + 1).join('#'));
 }
-if (Height==2) {
-  console.log('\n      ##\n     ###');
-}
-if (Height==3) {
-  console.log('\n      ##\n     ###\n    ####');
-}
-if (Height==4) {
-  console.log('\n      ##\n     ###\n    ####\n   #####');
-}
-if (Height==5) {
-  console.log('\n      ##\n     ###\n    ####\n    #####\n  ######');
-}
-if (Height==6) {
-  console.log('\n      ##\n     ###\n    ####\n    #####\n  ######\n #######');
-}
-if (Height==7) {
-    console.log('\n      ##\n     ###\n    ####\n   #####\n  ######\n #######\n########');
-}*/
