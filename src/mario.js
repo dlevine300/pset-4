@@ -6,6 +6,9 @@ while (height>24||height<1) {
   height=readlineSync.question('Height: ');
 }
 for (var count = 2; count < 9; count++) {
-
-    console.log(new Array(count + 1).join('#'));
+    let string=(new Array(count + 1).join('#'));
+    for(var space =8; space>0; space--) {
+      string=string + (new Array(space + 1).join(' '));
+      console.log(string);
+    }
 }
