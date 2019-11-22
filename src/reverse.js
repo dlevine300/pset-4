@@ -1,27 +1,27 @@
-const ReadlineSync = require('readline-sync');
-let Pi = ReadlineSync.question('\nPositive integer: ');
-let Min = 1;
-let Max = Number.MAX_SAFE_INTEGER;
-let Reversed = ("");
-let Integer = 0
+const readlineSync = require('readline-sync');
+let pi = readlineSync.question('\nPositive integer: ');
+let MIN = 1;
+let MAX = Number.MAX_SAFE_INTEGER;
+let reversed = ("");
+let integer = 0
 
 do {
- Pi = ReadlineSync.question('Positive integer: ');
-} while (Pi < Min);
-var Reverse_number = 0;
-var Num_value = Pi;
-while (Num_value != 0) {
- Reverse_number = parseInt(Reverse_number * 10);
- Reverse_number = parseInt(Reverse_number + (Num_value % 10));
- Num_value = parseInt(Num_value / 10);
+ pi = readlineSync.question('Positive integer: ');
+} while (pi < MIN);
+var reverseNumber = 0;
+var numValue = pi;
+while (numValue != 0) {
+ reverseNumber = parseInt(reverseNumber * 10);
+ reverseNumber = parseInt(reverseNumber + (numValue % 10));
+ numValue = parseInt(numValue / 10);
 }
 do {
- Integer = Pi % 10;
- Reversed = Reversed + Integer + ", ";
- Pi = Pi - Integer
- Pi = Pi / 10;
+ integer = pi % 10;
+ reversed = reversed + integer + ", ";
+ pi = pi - integer
+ pi = pi / 10;
 
-} while (Pi > 10);
+} while (pi > 10);
 
-Reversed = Reversed + Pi + (".");
-console.log('\n' + Reversed);
+reversed = reversed + pi + (".");
+console.log('\n' + reversed);
