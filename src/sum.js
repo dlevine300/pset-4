@@ -1,21 +1,21 @@
-const ReadlineSync=require('readline-sync');
-let Lb = ReadlineSync.question('\nLower bound: ');
-let Ub = ReadlineSync.question('Upper bound: ');
+const readlineSync=require('readline-sync');
+let lb = readlineSync.question('\nLower bound: ');
+let ub = readlineSync.question('Upper bound: ');
 
 do {
-  Lb = ReadlineSync.question('Lower bound: ');
-  Ub = ReadlineSync.question('Upper bound: ');
-} while (Lb > Ub);
-let Min= Number.MIN_SAFE_INTEGER;
-let Max= Number.MAX_SAFE_INTEGER;
+  lb = readlineSync.question('Lower bound: ');
+  ub = readlineSync.question('Upper bound: ');
+} while (lb > ub);
+let MIN= Number.MIN_SAFE_INTEGER;
+let MAX= Number.MAX_SAFE_INTEGER;
 
-const Value = (Lb + Ub)/2;
-Value % 2 ===0
-let Sum = 0;
-for (let I = Lb; I<= Ub; I++) {
-  if (I % 2 === 0) {
-    Sum += I;
+const value = (lb + ub)/2;
+value % 2 ===0
+let sum = 0;
+for (let i = lb; i<= ub; i++) {
+  if (i % 2 === 0) {
+    sum += i;
   }
 }
 
-console.log('\n' + Sum + '.');
+console.log('\n' + sum + '.');
