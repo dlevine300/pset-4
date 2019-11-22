@@ -1,27 +1,18 @@
-const ReadlineSync = require('readline-sync');
-let Pi = ReadlineSync.question('\nPositive integer: ');
-let Min = 1;
-let Max = Number.MAX_SAFE_INTEGER;
-let Odd = ("");
-let Integer = 0
+const readlineSync = require('readline-sync');
 
-do {
- Pi = ReadlineSync.question('Positive integer: ');
-} while (Pi < Min);
-var Reverse_number = 0;
-var Num_value = Pi;
-while (Num_value != 0) {
- Reverse_number = parseInt(Reverse_number * 10);
- Reverse_number = parseInt(Reverse_number + (Num_value % 10));
- Num_value = parseInt(Num_value / 10);
+let value = readlineSync.question("\nPositive Integer: ");
+let sum = 0;
+
+while (value <= 0) {
+  value = readlineSync.question("Positive Integer: ");
+  let num = value;
+  while (num > 0) {
+    let n = num % 10;
+    if (n % 2 != 0) {
+      sum = sum + n;
+    }
+    num = parseInt(num / 10);
+  }
+
 }
-do {
- Integer = Pi % 10;
- Odd = Odd + Integer + ", ";
- Pi = Pi - Integer
- Pi = Pi / 10;
-
-} while (Pi > 10);
-
-Odd = Odd + Pi + (".");
-console.log('\n' + Odd);
+console.log('\n' + sum + '.');
